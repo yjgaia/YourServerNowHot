@@ -26,18 +26,18 @@ UMAIL.CONNECT_TO_MAIL_SERVER(mailConfig, (_sendMail) => {
 		
 		EACH(CPU_USAGES(), (cpuUsage) => {
 			if (cpuUsage > 90) {
-				sendMail('CPU 사용률이 ' + cpuUsage + '%에 육박하였습니다.', 'CPU 사용률이 ' + cpuUsage + '%에 육박하였습니다.\n서버를 체크하시기 바랍니다.');
+				sendMail(mailConfig.serverName + '의 CPU 사용률이 ' + cpuUsage + '%에 육박하였습니다.', 'CPU 사용률이 ' + cpuUsage + '%에 육박하였습니다.\n' + mailConfig.serverName + '을(를) 체크하시기 바랍니다.');
 			}
 		});
 		
 		let memoryUsage = MEMORY_USAGE();
 		if (memoryUsage > 90) {
-			sendMail('메모리 사용률이 ' + memoryUsage + '%에 육박하였습니다.', '메모리 사용률이 ' + memoryUsage + '%에 육박하였습니다.\n서버를 체크하시기 바랍니다.');
+			sendMail(mailConfig.serverName + '의 메모리 사용률이 ' + memoryUsage + '%에 육박하였습니다.', '메모리 사용률이 ' + memoryUsage + '%에 육박하였습니다.\n' + mailConfig.serverName + '을(를) 체크하시기 바랍니다.');
 		}
 		
 		DISK_USAGE((diskUsage) => {
 			if (diskUsage > 90) {
-				sendMail('디스크 사용률이 ' + diskUsage + '%에 육박하였습니다.', '디스크 사용률이 ' + diskUsage + '%에 육박하였습니다.\n서버를 체크하시기 바랍니다.');
+				sendMail(mailConfig.serverName + '의 디스크 사용률이 ' + diskUsage + '%에 육박하였습니다.', '디스크 사용률이 ' + diskUsage + '%에 육박하였습니다.\n' + mailConfig.serverName + '을(를) 체크하시기 바랍니다.');
 			}
 		});
 	}));

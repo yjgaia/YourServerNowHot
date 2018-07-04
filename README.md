@@ -1,5 +1,5 @@
 # Your Server Now Hot
-CPU나 메모리, 디스크 사용률이 90%가 넘는지 1분에 한번씩 체크하여 넘으면 메일을 보내주는 애플리케이션
+CPU나 메모리, 디스크 사용률이 90%가 넘는지 1분에 한번씩 체크하여 넘으면 메일을 보내주는 애플리케이션입니다.
 
 ## 설치하기
 ```
@@ -18,7 +18,9 @@ git clone https://github.com/Hanul/YourServerNowHot
 
 	"senderName" : "BTNcafe Contact",
 	"senderAddress" : "sender@hanul.me",
-	"receiverAddress" : "hanul@hanul.me"
+	"receiverAddress" : "hanul@hanul.me",
+	
+	"serverName" : "My Server"
 }
 ```
 
@@ -28,6 +30,14 @@ node YourServerNowHot.js
 ```
 ```
 forever start YourServerNowHot.js
+```
+
+이제 CPU나 메모리, 디스크 사용률이 90%가 넘으면 다음과 같은 메일이 오게됩니다.
+
+```
+제목: My Server의 CPU 사용률이 98%에 육박하였습니다.
+내용: CPU 사용률이 98%에 육박하였습니다.
+My Server을(를) 체크하시기 바랍니다.
 ```
 
 ## 라이센스

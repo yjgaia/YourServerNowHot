@@ -7,5 +7,7 @@
 
 	"senderName" : "BTNcafe Contact",
 	"senderAddress" : "sender@hanul.me",
-	"receiverAddress" : "hanul@hanul.me"
+	"receiverAddress" : "hanul@hanul.me",
+	
+	"serverName" : "My Server"
 }
