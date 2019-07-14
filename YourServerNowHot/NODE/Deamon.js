@@ -30,10 +30,11 @@ YourServerNowHot.Deamon = OBJECT({
 						}
 					});
 					
-					let memoryUsage = MEMORY_USAGE();
-					if (memoryUsage > 90) {
-						sendMail(serverName + '의 메모리 사용률이 ' + memoryUsage + '%에 육박하였습니다.', '메모리 사용률이 ' + memoryUsage + '%에 육박하였습니다.\n' + serverName + '을(를) 체크하시기 바랍니다.');
-					}
+					MEMORY_USAGE((memoryUsage) => {
+						if (memoryUsage > 90) {
+							sendMail(serverName + '의 메모리 사용률이 ' + memoryUsage + '%에 육박하였습니다.', '메모리 사용률이 ' + memoryUsage + '%에 육박하였습니다.\n' + serverName + '을(를) 체크하시기 바랍니다.');
+						}
+					});
 					
 					DISK_USAGE((diskUsage) => {
 						if (diskUsage > 90) {
