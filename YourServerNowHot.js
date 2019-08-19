@@ -26,6 +26,9 @@ BOOT({
 				senderAddress : 'sender@hanul.me',
 				receiverAddress : 'hanul@hanul.me'
 			}
+			
+			// checkURL 설정을 하게되면 이 URL에 요청을 보내 오류가 반환되면 메일을 보내줍니다.
+			// checkURL : 'http://localhost:8888/check'
 		}
 	}
 });
