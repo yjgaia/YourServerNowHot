@@ -45,8 +45,8 @@ YourServerNowHot.Deamon = OBJECT({
 					});
 				};
 				
-				// 1분에 한번씩 CPU와 메모리, 디스크 사용률을 체크
-				INTERVAL(60, RAR(() => {
+				// 10분에 한번씩 CPU와 메모리, 디스크 사용률을 체크
+				INTERVAL(600, RAR(() => {
 					
 					EACH(CPU_USAGES(), (cpuUsage) => {
 						if (cpuUsage > 90) {
