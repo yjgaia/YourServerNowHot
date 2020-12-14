@@ -1,4 +1,4 @@
-require(process.env.UPPERCASE_PATH + '/LOAD.js');
+require(process.env.UPPERCASE_PATH + '/node.index.js');
 
 BOOT({
 	
