@@ -66,10 +66,12 @@ YourServerNowHot.Deamon = OBJECT({
 						}
 					});
 					
-					if (CHECK_IS_ARRAY(checkURL) === true) {
-						NEXT(checkURL, check);
-					} else {
-						check(checkURL);
+					if (checkURL !== undefined) {
+						if (CHECK_IS_ARRAY(checkURL) === true) {
+							NEXT(checkURL, check);
+						} else {
+							check(checkURL);
+						}
 					}
 				}));
 				
